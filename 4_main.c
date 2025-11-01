@@ -1,22 +1,24 @@
 //202510305220
 //3614193262@qq.com
 //李亚君
-#include<stdio.h>
+#include <stdio.h>
 int main ()
 {
-    int e,f,g;
-    scanf ("%d %d %d",&e,&f,&g);
-    if (e+f>g && e+g>f && f+g>e)
+    int i = 100, a, b, c, first = 1;
+    while (i <= 999)
     {
-        printf("可以组成三角形\n");
+    a = i /100;
+    b =(i / 10) % 10;
+    c = i % 10;
+        if (a*a*a+b*b*b+c*c*c==i)
+{
+    if (! first){
+        printf (" ");
     }
-    else
-    { 
-        printf("不能组成三角形\n");
+    printf ("%d",i);
+    first = 0;
+}
+    i++;
     }
-    
-   
-   
-   
     return 0;
 }
