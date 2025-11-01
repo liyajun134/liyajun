@@ -2,35 +2,26 @@
 //3614193262@qq.com
 //李亚君
 #include <stdio.h>
-int main()
+int  main ()
 {
-    int score=0;
-    scanf("%d",&score);
-    if (score >= 90 && score <=100)
+    int i, a, b, c, first = 1;
+    for (i = 100; i <= 999; i++)
     {
-        printf("A\n");
+        a=i/100;
+        b=(i/10)%10;
+        c=i%10;
+        if (a*a*a+b*b*b+c*c*c==i)
+        {
+            if (!first)
+            {
+                printf(" ");
+            }
+            printf ("%d",i);
+            first =0;
+        }
     }
-    else if (score >=80 && score <=89)
-    {
-        printf("B\n");
-    }
-    else if (score >=70 && score <=79)
-    {
-        printf("C\n");
-    }
-    else if (score >=60 && score <=69)
-    {
-        printf("D\n");
-    }
-    else if (score <=59)
-    {
-        printf("E\n");
-    }
-
 
 
     return 0;
-    
+
 }
-
-
