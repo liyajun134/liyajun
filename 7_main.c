@@ -2,28 +2,18 @@
 //3614193262@qq.com
 //李亚君
 #include <stdio.h>
-int array_sum(int arr[], int len) {
-    int sum = 0;
-    for (int i = 0; i < len; i++) {
-        sum += arr[i];
+void reverse_array(int arr[], int len) {
+    for (int i = 0; i < len/2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[len-1-i];
+        arr[len-1-i] = temp;
     }
-    return sum;
 }
-int array_product(int arr[], int len) {
-    int product = 1;
-    for (int i = 0; i < len; i++) {
-        product *= arr[i];
-    }
-    return product;
-}
-int main()
- {
-    int arr[5];
-    for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
-    }
-    int sum = array_sum(arr, 5);
-    int product = array_product(arr, 5);
-    printf("%d %d\n", sum, product);
+
+int main() {
+    int arr[] = {1,2,3,4,5}, len=5;
+    reverse_array(arr, len);
+    for (int i=0; i<len; i++)
+        printf("%d%s", arr[i], i<len-1?" ":"");
     return 0;
 }
