@@ -2,22 +2,13 @@
 //3614193262@qq.com
 //李亚君
 #include <stdio.h>
-int main ()
+int arithmetic_sum(int a1, int an, int step){
+    int n = (an - a1) / step + 1;
+    return (a1 + an )* n / 2;
+}
+int main()
 {
-    int arr[5], sum = 0;
-    for ( int i = 0; i< 4; i++)
-    {
-        scanf ("%d ", &arr[i]);
-        sum += arr[i];
-    }
-    arr[4] = sum ;
-    for (int i = 0; i<5 ; i++)
-    {   if (i > 0)
-        {
-            printf (" ");
-        }
-        printf ("%d", arr[i]);
-    }
+    int sum  = arithmetic_sum(1, 100, 1);
+    printf("%d\n", sum );
     return 0;
-
 }
