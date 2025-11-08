@@ -4,27 +4,22 @@
 #include <stdio.h>
 int main ()
 {
-    int n, i, a =1;
-    scanf("%d",&n);
-
-    if (n<=1)
-    {a =0;
-        
-    }else{
-    while ( i*i <=n)
-    {
-      if (n % i == 0)
-      {
-        a =0;
-        break;
-      }
+    int arr[10];
+    for (int i = 0; i < 10; i++){
+        scanf ("%d", &arr[i]);
     }
-}
-    if (a )    
-    {  printf("密钥安全，密码设置成功\n");
-    }else
-    {printf("密钥不安全,请重新输入、n");
-    }    
+    for (int i = 0; i < 9; i++){
+        for (int j = 0; j < 9 - i;j++){
+            if (arr[j] > arr[j+1]){
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    for (int i = 0; i < 10; i++){
+        printf ("%d", arr[i]);
+    }
     return 0;
 
 }
