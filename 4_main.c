@@ -1,22 +1,31 @@
 //202510305220
 //3614193262@qq.com
 //李亚君
-#include <stdio.h>
-int power(int a, int b){
-    int result = 1;
-    for (int i = 0; i < b; i++){
-        result *= a;
-    }
-    return result;
-
-}
-int main ()
+#include<stdio.h>
+void n(int *ptr_arr,int len)
 {
-    int sum = 0;
-    for (int i = 1; i<= 5; i++){
-        sum += power(i, 2);
-    }
-    printf("%d\n", sum);
-    return 0;
+	for (int i = len-1; i > 0 ; i--)
+	{
+		*(ptr_arr + i) = *(ptr_arr + i - 1);
+	}
+	*ptr_arr = 0;
+}
+int main()
+{
+	int arr[5];
+	int i = 0;
+	int len = sizeof(arr) / sizeof(arr[0]);
+	for (i = 0; i < 5; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
 
+	n(arr,len);
+
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+
+	return 0;
 }
