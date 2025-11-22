@@ -2,27 +2,20 @@
 //3614193262@qq.com
 //李亚君
 #include <stdio.h>
-int array_sum(int arr[], int len) {
-    int sum = 0;
-    for (int i = 0; i < len; i++) {
-        sum += arr[i];
-    }
-    return sum;
-}
-int array_product(int arr[], int len) {
-    int product = 1;
-    for (int i = 0; i < len; i++) {
-        product *= arr[i];
-    }
-    return product;
-}
+#include <stdlib.h>  
+
 int main() {
-    int arr[5];
+
+    int *ptr = (int *)malloc(5 * sizeof(int));
+    
     for (int i = 0; i < 5; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", ptr + i);  
     }
-    int sum = array_sum(arr, 5);
-    int product = array_product(arr, 5);
-    printf("%d %d\n", sum, product);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(ptr + i));
+    }
+    printf("\n");
+    free(ptr);  
+    ptr = NULL; 
     return 0;
 }
